@@ -418,3 +418,39 @@ figcaption>span { flex:1; }
   .source-comparison-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .source-comparison-panel { break-inside:avoid; }
 }
+
+/* Source-led case sequences; original pixels remain unchanged. */
+.evidence-sequence { margin:32px 0; }
+.evidence-sequence-list { list-style:none; padding:0; margin:0; }
+.evidence-sequence-step { display:grid; grid-template-columns:210px minmax(0,1fr); gap:26px; padding:30px 0; border-top:1px solid var(--line); }
+.evidence-sequence-copy, .evidence-sequence-proof { min-width:0; }
+.evidence-sequence-copy .sequence-stage { margin:0 0 12px; color:var(--muted); font-size:12px; font-weight:600; line-height:1.6; }
+.sequence-stage span { margin-right:8px; font-variant-numeric:tabular-nums; }
+.evidence-sequence-copy h3 { margin:0 0 14px; font-size:24px; line-height:1.2; letter-spacing:-.025em; }
+.evidence-sequence-copy > p:last-child { margin:0; font-size:16px; line-height:1.7; }
+.sequence-figure { margin:0; }
+.sequence-image { padding:12px; background:#fff; border:1px solid var(--line); border-radius:12px; }
+.sequence-image img { display:block; margin:0; width:100%; max-width:var(--source-width); height:auto; }
+.sequence-figure > figcaption { display:block; padding:14px 0 0; font-size:12px; line-height:1.7; color:var(--muted); }
+.sequence-figure > figcaption p { margin:0 0 9px; }
+.sequence-figure .expand-image { justify-content:flex-start; }
+.sequence-source-note { margin:22px 0 0; font-size:13px; line-height:1.7; color:var(--muted); max-width:75ch; }
+.sequence-proposal { padding:22px 28px; border-left:3px solid var(--line); }
+.sequence-proposal ol { margin:0; padding-left:22px; }
+.sequence-proposal li { margin:0 0 14px; line-height:1.7; }
+.sequence-proposal li:last-child { margin-bottom:0; }
+@media (max-width:1100px) {
+ .evidence-sequence-step { grid-template-columns:minmax(0,1fr); gap:20px; }
+ .evidence-sequence-copy h3 { max-width:24ch; }
+ .evidence-sequence-copy > p:last-child { max-width:65ch; }
+}
+@media (max-width:760px) {
+ .evidence-sequence { margin:24px 0; }
+ .evidence-sequence-step { padding:26px 0; }
+ .sequence-image { padding:7px; border-radius:8px; }
+ .sequence-figure > figcaption { font-size:13px; }
+ .sequence-proposal { padding:12px 0 12px 18px; }
+}
+@media print {
+ .evidence-sequence-step { grid-template-columns:180px minmax(0,1fr); break-inside:avoid; }
+}
