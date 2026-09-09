@@ -95,3 +95,21 @@ if (chapters.length && 'IntersectionObserver' in window) {
   chapters.forEach(section => chapterObserver.observe(section));
   markChapter();
 }
+
+// Media requests are initiated only by an explicit play action.
+document.querySelectorAll('.teaching-player[data-video-id]').forEach(player => {
+  const button = player.querySelector('.video-load');
+  const id = player.dataset.videoId;
+  if (!button || !/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    const frame = document.createElement('iframe');
+    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    frame.title = player.dataset.videoTitle;
+    frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    player.replaceChildren(frame);
+    frame.focus();
+  });
+});
