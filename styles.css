@@ -524,3 +524,34 @@ figcaption>span { flex:1; }
 /* Preserve complete phone artifacts when overview cards have wider columns. */
 .suite-edition .project-visual:is(.flint,.insights) .primary-screen{height:calc(100% - 80px);width:auto;max-width:42%;object-fit:contain;left:16%;top:54px!important}
 .suite-edition .project-visual:is(.flint,.insights) .secondary-screen{height:calc(100% - 125px);width:auto;max-width:40%;object-fit:contain;right:14%;top:96px!important}
+
+/* A small transparent accent sits behind the portrait, outside reading areas. */
+.story { padding:90px 0; }
+.story-grid { align-items:start; }
+.portrait-note { position:relative; align-items:flex-start; gap:26px; min-height:260px; }
+.portrait-scene { position:relative; display:block; flex:0 0 160px; height:235px; isolation:isolate; }
+.portrait-scene > .portrait-photo { position:relative; z-index:1; width:144px; height:176px; box-shadow:0 8px 24px #192b2512; }
+.story .story-art { position:absolute; inset:124px auto auto -70px; width:400px; height:auto; pointer-events:none; filter:none; }
+.story .story-art img { display:block; width:100%; height:auto; object-fit:contain; opacity:1; transform:rotate(-12deg); }
+.portrait-note .serif-note { position:relative; z-index:1; padding-top:25px; max-width:250px; }
+@media(max-width:1100px) and (min-width:761px) {
+  .portrait-note { gap:14px; }
+  .portrait-scene { flex-basis:130px; }
+  .portrait-scene > .portrait-photo { width:124px; height:151px; }
+  .story .story-art { width:330px; top:150px; left:-56px; }
+  .portrait-note .serif-note { font-size:21px; }
+}
+@media(max-width:760px) {
+  .story { padding:62px 0; }
+  .portrait-note { margin-top:30px; min-height:246px; gap:20px; }
+  .portrait-scene { flex-basis:118px; height:230px; }
+  .portrait-scene > .portrait-photo { width:118px; height:144px; }
+  .story .story-art { top:102px; left:-54px; width:310px; }
+  .portrait-note .serif-note { font-size:22px; max-width:220px; padding-top:10px; }
+  .story-grid { gap:8px; }
+}
+@media(max-width:360px) {
+  .portrait-note { gap:14px; }
+  .portrait-note .serif-note { font-size:20px; }
+  .story .story-art { width:275px; top:124px; }
+}
