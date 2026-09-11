@@ -78,7 +78,7 @@
       } else {
         lastSent = Date.now();
         form.reset();
-        setStatus('Thanks—your message was sent. I’ll reply to the email address you provided.', 'success');
+        setStatus('Thanks, your message was sent. I’ll reply to the email address you provided.', 'success');
       }
     } catch {
       setStatus('I couldn’t confirm whether your message was sent. It may have arrived. Your message is still here if you want to try again or contact me by email.', 'uncertain', true);

@@ -113,3 +113,17 @@ document.querySelectorAll('.teaching-player[data-video-id]').forEach(player => {
     frame.focus();
   });
 });
+
+// The native menu still works without JavaScript; this adds familiar dismissal.
+const portfolioMenu = document.querySelector('.portfolio-mobile-menu');
+if (portfolioMenu) {
+  portfolioMenu.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && portfolioMenu.open) {
+      portfolioMenu.open = false;
+      portfolioMenu.querySelector('summary').focus();
+    }
+  });
+  portfolioMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => { portfolioMenu.open = false; });
+  });
+}
