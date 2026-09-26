@@ -25,7 +25,7 @@ if (dialog && typeof dialog.showModal === 'function') {
       imageError.hidden = true;
       image.src = link.href;
       image.alt = link.dataset.alt || '';
-      description.textContent = link.dataset.alt || '';
+      description.textContent = link.dataset.caption || link.dataset.alt || '';
       original.href = link.href;
       dialog.classList.remove('zoomed');
       zoom.setAttribute('aria-pressed', 'false');

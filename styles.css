@@ -811,3 +811,43 @@ figcaption>span { flex:1; }
 }
 
 @media print { .portfolio-header { display: none !important; } }
+
+/* Readable evidence and unobscured navigation across the portfolio. */
+html { scroll-padding-top:calc(var(--kh-bar-height, 80px) + 24px); }
+.case-nav { top:calc(var(--kh-bar-height, 80px) + 24px); }
+:where(a,button,input,textarea,summary,[tabindex]) { scroll-margin-top:calc(var(--kh-bar-height, 80px) + 24px); }
+.project-proof { min-width:0; }
+.project-proof > .visual-state {
+  display:block; position:static; margin:14px 0 0; padding:0;
+  font-size:16px; line-height:1.5; letter-spacing:normal;
+  color:var(--ink); background:var(--paper); max-width:none;
+}
+.visual-caption { font-size:14px; line-height:1.5; }
+.suite-edition .visual-caption { font-size:14px; }
+.hero-project-label { font-size:14px; line-height:1.6; flex-wrap:wrap; gap:8px 12px; }
+.hero-project-label > span:first-child { font-size:12px; }
+.hero-note,.project-role,.case-reading-time,.work-stage,
+.download-meta,.download-editable,.contact-meta,.education,
+figcaption,.expand-image,.case-outcome .source-note,
+.next-cases a>span:first-child { font-size:16px!important; line-height:1.6; }
+.project-index span,.case-facts dt,.work-stage strong,.brief-item dt { font-size:13px; line-height:1.6; }
+.case-facts dd,.brief-item dd { font-size:16px; }
+.project-index { flex-wrap:wrap; gap:8px 16px; }
+.back-link,.text-link,.case-nav a { min-height:44px; }
+.case-nav a { font-size:14px; }
+.site-footer { font-size:14px; }
+@media(max-width:760px) {
+  .project-proof > .visual-state { margin-top:12px; }
+  .visual-caption { left:20px; right:20px; }
+  .hero-project-label { align-items:flex-start; }
+  .hero-project-label > .ui-icon { align-self:center; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+}
+.image-dialog > .image-caption { font-size:16px; line-height:1.6; }
+.contact-form :is(.field-error,.field-hint,.form-required,.contact-privacy) { font-size:14px; line-height:1.6; }
+/* Let a mobile reviewer understand a case before scrolling through its art. */
+@media(min-width:761px) {
+  .project-row:not(:nth-of-type(2)) .project-image-link { order:-1; }
+}

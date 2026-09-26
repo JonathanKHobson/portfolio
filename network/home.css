@@ -30,3 +30,7 @@ h1 em { font: italic 1.04em/1.05 Georgia, serif; }
   .space-entry { padding: 24px 0 28px; }
   .spaces-note { flex-direction: column; gap: 12px; }
 }
+
+/* Keep directory numbering legible and targets below the shared sticky bar. */
+.space-number { color:#58645d; }
+html { scroll-padding-top:calc(var(--kh-bar-height,80px) + 24px); }
