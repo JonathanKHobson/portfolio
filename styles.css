@@ -400,6 +400,9 @@ figcaption>span { flex:1; }
   .practice-spotlight--compact .evidence-figure { margin:0; }
 }
 
+/* Role labels stack under the organization on small screens, as on desktop. */
+@media (max-width:760px) { .experience-strip small { display:block; margin:2px 0 0; } }
+
 /* Original evidence pairs. Every selector is scoped to this optional module. */
 .source-comparison { margin:32px 0 24px; }
 .source-comparison-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; align-items:start; }
@@ -710,7 +713,7 @@ figcaption>span { flex:1; }
 }
 
 .portfolio-masthead {
-  min-height: 100px;
+  min-height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -808,6 +811,16 @@ figcaption>span { flex:1; }
   .portfolio-header .wordmark { font-size: 22px; gap: 8px; }
   .portfolio-header .brand-mark { width: 28px; height: 28px; }
   .portfolio-mobile-menu summary { gap: 6px; }
+}
+
+/* Context-only network bar: the wordmark below is the single identity; All spaces stays sticky. */
+body:has(.kh-network--context) { --kh-bar-height: 44px; }
+.kh-network.kh-network--context .kh-inner { min-height: 43px; gap: 16px; }
+.kh-network.kh-network--context .kh-current { border-left: 0; padding-left: 0; font-size: 13px; }
+.kh-network.kh-network--context .kh-menu > summary { font-size: 13px; }
+@media (max-width: 640px) {
+  .kh-network.kh-network--context .kh-inner { display: flex; grid-template-rows: none; padding: 0 16px; }
+  .kh-network.kh-network--context .kh-current { padding: 0; font-size: 12px; }
 }
 
 @media print { .portfolio-header { display: none !important; } }
